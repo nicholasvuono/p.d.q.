@@ -13,7 +13,6 @@ import (
  * Listens for Target Changes and Page Loads to display performance metrics that correlate to the page currently in scope
  */
 func main() {
-
 	browser := rod.New().
 		ControlURL(
 			launcher.New().
@@ -35,6 +34,7 @@ func main() {
 					return
 				default:
 					getPageLoadTimingsOverlay(page)
+					logMemoryUsage(page)
 					quit <- true
 					break
 				}

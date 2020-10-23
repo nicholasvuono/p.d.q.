@@ -36,6 +36,6 @@ func getPageLoadTimings(page *rod.Page) string {
 
 func getPageLoadTimingsOverlay(page *rod.Page) {
 	pageLoadTimings := getPageLoadTimings(page)
-	inlineJS := `(pageLoadTimings) => {let existing = document.getElementById('PageLoadTimings');if(existing === null) {let body = document.querySelector('body');let div = document.createElement('div');div.setAttribute('id', 'PageLoadTimings');div.setAttribute('style', 'color:#00FFFF;position:fixed;background:rgba(0,0,0,.8);z-index:99000000000;left:0px;bottom:0px;width:300px;height:60px;pointer-events:none;font-size:small;white-space:pre-wrap;');div.textContent = pageLoadTimings;body.appendChild(div);} else {existing.textContent = pageLoadTimings;}}`
+	inlineJS := `(pageLoadTimings) => {let existing = document.getElementById('PageLoadTimings');if(existing === null) {let body = document.querySelector('body');let div = document.createElement('div');div.setAttribute('id', 'PageLoadTimings');div.setAttribute('style', 'font-family:Segoe UI;color:#00FFFF;position:fixed;background:rgba(0,0,0,.8);z-index:99000000000;left:0px;bottom:0px;width:280px;height:60px;pointer-events:none;font-size:small;white-space:pre-wrap;');div.textContent = pageLoadTimings;body.appendChild(div);} else {existing.textContent = pageLoadTimings;}}`
 	page.MustEval(inlineJS, pageLoadTimings)
 }
