@@ -32,10 +32,10 @@ Traditional forntend performance testing usually requires the use of tools like 
 
 Might write an article on this in the future but for now here are some important links with some important frontend performance metrics and guidelines:
 
-* [https://web.dev/rail/] (https://web.dev/rail/)
-* [https://web.dev/user-centric-performance-metrics/] (https://web.dev/user-centric-performance-metrics/)
-* [https://www.nngroup.com/articles/response-times-3-important-limits/] (https://www.nngroup.com/articles/response-times-3-important-limits/)
-* [https://httparchive.org/reports/loading-speed] (https://httparchive.org/reports/loading-speed)
+* https://web.dev/rail/
+* https://web.dev/user-centric-performance-metrics/
+* https://www.nngroup.com/articles/response-times-3-important-limits/
+* https://httparchive.org/reports/loading-speed
 
 ## Examples and Screenshots
 
