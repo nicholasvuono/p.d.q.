@@ -8,6 +8,7 @@ import (
 	"github.com/go-rod/rod"
 )
 
+//Gets the currently used memory percentage
 func getUsedMemoryPercentage(page *rod.Page) string {
 	totalJSHeapSize, err := page.Eval("JSON.stringify(window.performance.memory.totalJSHeapSize)")
 	explain(err)
@@ -21,18 +22,21 @@ func getUsedMemoryPercentage(page *rod.Page) string {
 	return memory
 }
 
+//Gets the current number of DOM nodes
 func getCurrentNumberOfNodes(page *rod.Page) string {
 	nodes, err := page.Eval("JSON.stringify(document.getElementsByTagName('*').length)")
 	explain(err)
 	return nodes.Value.String()
 }
 
+//Gets the current page url
 func getPageURL(page *rod.Page) string {
 	url, err := page.Eval("JSON.stringify(document.URL)")
 	explain(err)
 	return url.Value.String()
 }
 
+//Prints memory metrics into the terminal
 func logMemoryUsage(page *rod.Page) {
 	url := getPageURL(page)
 	nodes := getCurrentNumberOfNodes(page)
