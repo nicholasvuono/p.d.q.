@@ -1,5 +1,5 @@
 # pdq
-[![Go Report Card](https://goreportcard.com/report/github.com/nicholasvuono/pdq)](https://goreportcard.com/report/github.com/nicholasvuono/pdq)
+[![Go Report Card](https://goreportcard.com/badge/github.com/nicholasvuono/pdq)](https://goreportcard.com/report/github.com/nicholasvuono/pdq)
 
 Pretty Damn Quick - a performance browser that shows profiling metrics in real time
 
