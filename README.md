@@ -9,10 +9,10 @@ The goal of this project is to design a performance tool that replaces the tradi
 
 * Pure Go implementation
 * Cross-platform executables (Windows, Mac, Linux)
-* Displays reat-time frontend performance metrics:
+* Displays real-time frontend performance metrics:
     * Frames and GPU
     * Page Load Time:
-        * First Contenful Paint
+        * First Contentful Paint
         * Time to Interactive
         * Total Blocking Time
         * Time to First Byte
@@ -26,7 +26,7 @@ A Browser to replace traditional frontend profiling. This browser is designed to
 
 ## Why?
 
-Traditional forntend performance testing usually requires the use of tools like Chrome Developer Tools, Page Speed Insights, Lighthouse, and more. Tools that are used to capture the performance of workflows (i.e., Chrome Developer Tools) usually need the user to record a workflow and sort through a pile of data to find meaningful insights. Tools that are used to capture the performance of page load time (i.e., Lighthouse) usually require an audit of some sort that that make you wait for results after you click the button. Now these tools are great at what they do, but they take away from the development process by having developer open up a separate profiling tool or navigate to another website to copy and paste their web application link. Wouldn't it be easier if related profiling metrics were displayed in real-time in the browser they were already using to develop their web application without any additional steps?
+Traditional forntend performance testing usually requires the use of tools like Chrome Developer Tools, Page Speed Insights, Lighthouse, and more. Tools that are used to capture the performance of workflows (i.e., Chrome Developer Tools) usually need the user to record a workflow and sort through a pile of data to find meaningful insights. Tools that are used to capture the performance of page load time (i.e., Lighthouse) usually require an audit of some sort that makes you wait for results after you click the button. Now these tools are great at what they do, but they take away from the development process by having developers open up a separate profiling tool or navigate to another website to copy and paste their web application link. Wouldn't it be easier if related profiling metrics were displayed in real-time in the browser they were already using to develop their web application without any additional steps?
 
 ## Research behind the tool
 
@@ -36,6 +36,16 @@ Might write an article on this in the future but for now here are some important
 * https://web.dev/user-centric-performance-metrics/
 * https://www.nngroup.com/articles/response-times-3-important-limits/
 * https://httparchive.org/reports/loading-speed
+
+## How to build for other systems
+
+There is a Windows executable in the repo's build folder, but if you want to use it without running a go command every time you can build it using the following:
+
+```bash
+env GOOS=target-OS GOARCH=target-architecture go build package-import-path
+```
+
+More details here: https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04
 
 ## Examples and Screenshots
 
