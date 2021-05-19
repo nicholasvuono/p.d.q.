@@ -1,8 +1,13 @@
-# pdq
-[![Go Report Card](https://goreportcard.com/badge/github.com/nicholasvuono/pdq)](https://goreportcard.com/report/github.com/nicholasvuono/pdq)
+[![Go Report Card](https://goreportcard.com/badge/github.com/nicholasvuono/pdq)](https://goreportcard.com/report/github.com/nicholasvuono/pdq)<br>
+<p align="center">
+   <img src="images/pdq logo.PNG" width="400" alt="pdq"/><br>
+   - Pretty Damn Quick -<br>
+   a performance browser that shows profiling metrics in real time<br><br><br>
+</p>
 
-Pretty Damn Quick - a performance browser that shows profiling metrics in real time
+- - - -
 
+<br><br>
 The goal of this project is to design a performance tool that replaces the traditional profiling practice of recording workflows in favor of realtime metrics.
 
 ## Features
