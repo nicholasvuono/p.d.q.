@@ -12,13 +12,8 @@ var url string
 
 //Creates a new browser, sets headless to be false, and clears the defualt device to laod the page correctly
 func newBrowser() *rod.Browser {
-	browser := rod.New().
-		ControlURL(
-			launcher.New().
-				Headless(false).
-				MustLaunch(),
-		).
-		MustConnect().DefaultDevice(devices.Clear, true)
+	l := launcher.New().Headless(false).MustLaunch()
+	browser := rod.New().ControlURL(l).MustConnect().DefaultDevice(devices.Clear)
 	return browser
 }
 
@@ -73,6 +68,7 @@ func getURL() string {
  */
 func main() {
 	browser := newBrowser()
+	browser.MustPage("https://wosp.io")
 	wait := onTargetInfoChanged(browser)
 	wait()
 }
