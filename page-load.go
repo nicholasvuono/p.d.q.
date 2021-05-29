@@ -10,9 +10,9 @@ import (
 
 //Gets First Contentful Paint information for a given page and returns the value as a string
 func getFirstContentfulPaint(page *rod.Page) string {
-	firstContentfulPaint, err := page.Eval("JSON.stringify(performance.getEntriesByName('first-contentful-paint'))")
+	firstPaint, err := page.Eval("JSON.stringify(performance.getEntriesByType('paint'))")
 	explain(err)
-	fcp := gjson.Get(firstContentfulPaint.Value.String(), "0.startTime").Uint()
+	fcp := gjson.Get(firstPaint.Value.String(), "0.startTime").Uint()
 	return strconv.FormatUint(fcp, 10)
 }
 
@@ -55,10 +55,10 @@ func getPageLoadTimings(page *rod.Page) string {
 	tbt := getTotalBlockingTime(fcp, tti)
 	ttfb := getTimeToFirstByte(page)
 	pageLoadTimings := fmt.Sprintf(`
-	First Contentful Paint (FCP):		%vms
-	Time to Interactive (TTI):			%vms
-	Total Blocking Time (TBT):		%vms
-	Time to First Byte (TTFB):		%vms
+	First Paint:		%vms
+	Page Interactive:			%vms
+	Total Blocking Time:		%vms
+	Time to First Byte:		%vms
 	`, fcp, tti, tbt, ttfb)
 	return pageLoadTimings
 }
